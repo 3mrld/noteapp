@@ -39,6 +39,7 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           actions: [editButton(), deleteButton()],
+          iconTheme: IconThemeData(color: Color.fromRGBO(13, 209, 33, 1)),
         ),
         body: isLoading
             ? Center()
@@ -50,7 +51,7 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
                     Text(
                       note.title,
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 23,
                         fontWeight: FontWeight.bold,
                       ),
@@ -58,12 +59,12 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
                     SizedBox(height: 8),
                     Text(
                       DateFormat.yMMMd().format(note.createdTime),
-                      style: TextStyle(color: Colors.white38),
+                      style: TextStyle(color: Colors.black),
                     ),
                     SizedBox(height: 8),
                     Text(
                       note.description,
-                      style: TextStyle(color: Colors.white70, fontSize: 18),
+                      style: TextStyle(color: Colors.black, fontSize: 18),
                     )
                   ],
                 ),
@@ -71,7 +72,7 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
       );
 
   Widget editButton() => IconButton(
-      icon: Icon(Icons.edit_outlined),
+      icon: Icon(Icons.edit_outlined, color: Color.fromRGBO(13, 209, 33, 1),),
       onPressed: () async {
         if (isLoading) return;
 
@@ -83,7 +84,7 @@ class _NoteDetailPageState extends State<NoteDetailPage> {
       });
 
   Widget deleteButton() => IconButton(
-        icon: Icon(Icons.delete),
+        icon: Icon(Icons.delete, color: Color.fromRGBO(13, 209, 33, 1),),
         onPressed: () async {
           await NotesDatabase.instance.delete(widget.noteId);
 

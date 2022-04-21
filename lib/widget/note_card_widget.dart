@@ -39,7 +39,7 @@ class NoteCardWidget extends StatelessWidget {
           children: [
             Text(
               time,
-              style: TextStyle(color: Colors.grey.shade700),
+              style: TextStyle(color: Colors.black),
             ),
             SizedBox(height: 4),
             Text(

@@ -35,6 +35,7 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           actions: [buildButton()],
+          iconTheme: IconThemeData(color: Color.fromRGBO(13, 209, 33, 1)),
         ),
         body: Form(
           key: _formKey,
@@ -61,7 +62,7 @@ class _AddEditNotePageState extends State<AddEditNotePage> {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           onPrimary: Colors.white,
-          primary: isFormValid ? null : Colors.grey.shade700,
+          primary: isFormValid ? Color.fromRGBO(13, 209, 33, 1) : Colors.grey.shade700,
         ),
         onPressed: addOrUpdateNote,
         child: Text('Save'),

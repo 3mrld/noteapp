@@ -42,9 +42,8 @@ class _NotesPageState extends State<NotesPage> {
         appBar: AppBar(
           title: Text(
             'Notes',
-            style: TextStyle(fontSize: 24),
+            style: TextStyle(color: Color.fromRGBO(13, 209, 33, 1)  ,fontSize: 24),
           ),
-          actions: [Icon(Icons.search), SizedBox(width: 12)],
         ),
         body: Center(
           child: isLoading
@@ -52,12 +51,12 @@ class _NotesPageState extends State<NotesPage> {
               : notes.isEmpty
                   ? Text(
                       'No Notes',
-                      style: TextStyle(color: Colors.white, fontSize: 24),
+                      style: TextStyle(color: Color.fromRGBO(13, 209, 33, 1), fontSize: 24),
                     )
                   : buildNotes(),
         ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.black,
+          backgroundColor: Color.fromRGBO(13, 209, 33, 1),
           child: Icon(Icons.add),
           onPressed: () async {
             await Navigator.of(context).push(
